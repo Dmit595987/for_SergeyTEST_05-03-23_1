@@ -7,11 +7,17 @@ from .models import Client
 
 
 def index(request):
-    return render(request, 'index.html')
+    context = {
+        'title': 'Главная страница'
+    }
+    return render(request, 'index.html', context)
 
 
 def about(request):
-    return render(request, 'about.html', {'ph': 'static/images/dj-neo1.img'})
+    context = {
+        'title': 'Обо мне'
+    }
+    return render(request, 'about.html', context)
 
 
 def contact(request):
@@ -24,29 +30,47 @@ def contact(request):
             return redirect('thanks')
     else:
         form = Clients_phone()
-    return render(request, 'contact.html', {'form': form})
+    return render(request, 'contact.html', {'form': form, 'title': "Заказ мероприятия"})
 
 
 
 def work(request):
-    return render(request, 'work.html')
+    context = {
+        'title': 'Свадьба'
+    }
+    return render(request, 'work.html', context)
 
 
 def secret_master(request):
-    return render(request, 'blog.html')
+    context = {
+        'title': 'Секреты мастерства'
+    }
+    return render(request, 'blog.html', context)
 
 
 def thanks(request):
-    return render(request, 'thanks.html')
+    context = {
+        'title': 'Мы с вами свяжемся'
+    }
+    return render(request, 'thanks.html', context)
 
 
 def work_single(request):
-    return render(request, 'work-single.html')
+    context = {
+        'title': 'Свадьба только раз...'
+    }
+    return render(request, 'work-single.html', context)
 
 def blog(request):
-    return render(request, 'blog.html')
+    context = {
+        'title': 'Секреты'
+    }
+    return render(request, 'blog.html', context)
 
 
 def blog_single(request):
-    return render(request, 'blog-single.html')
+    context = {
+        'title': 'Блог'
+    }
+    return render(request, 'blog-single.html', context)
 

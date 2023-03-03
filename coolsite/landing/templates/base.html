@@ -6,7 +6,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>DJ NEO</title>
+    <title>DJ NEO: {{ title }}</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/aos.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/hamburgers/hamburgers.min.css' %}">
@@ -36,10 +37,11 @@
             <nav class="templateux-menu js-templateux-menu" role="navigation">
               <ul class="list-unstyled">
                 <li class="d-md-none d-block active"><a href="{% url 'index' %}" class="animsition-link">Home</a></li>
-                <li><a href="{% url 'work' %}" class="animsition-link">Праздники</a></li>
+                <li><a href="{% url 'work' %}" class="animsition-link">Свадьба</a></li>
                 <li><a href="{% url 'about' %}" class="animsition-link">Обо мне</a></li>
                 <li><a href="{% url 'secret_master' %}" class="animsition-link">Секреты мастерства</a></li>
                 <li><a href="{% url 'contact' %}" class="animsition-link">Заказать мероприятие</a></li>
+                <li><a href="https://t.me/+79167001720" class="animsition-link">Написать в TELEGRAM</a></li>
               </ul>
             </nav>
           </div>
@@ -57,15 +59,16 @@
           <div class="col-md-6 text-md-left text-center">
             <p>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" class="text-primary">Colorlib</a>
+            Copyright &copy; 2018-<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" class="text-primary">Colorlib</a>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
           </p>
           </div>
           <div class="col-md-6 text-md-right text-center footer-social">
-            <!-- Instagram -->
+            <!-- Social -->
+            <a href="https://t.me/+79167001720" target="_blank"><img src="{% static 'images/icons8.svg' %}" alt="telegram" width="30" height="30"></a>
             <a href="#"><img src="{% static 'images/instagram.svg' %}" alt="instagram" width="30" height="30"></a>
-            <a href="https://vk.com/djneo_official?ysclid=ldneilyelf960547158"><img src="{% static 'images/vk_icon.svg' %}" alt="vk" width="34" height="34"></a>
-            <a href="https://www.youtube.com/watch?v=SzQmE60A3nw"><img src="{% static 'images/youtube.svg' %}" alt="vk" width="34" height="34"></a>
+            <a href="https://vk.com/djneo_official?ysclid=ldneilyelf960547158" target="_blank"><img src="{% static 'images/vk_icon.svg' %}" alt="vk" width="34" height="34"></a>
+            <a href="https://www.youtube.com/watch?v=SzQmE60A3nw" target="_blank"><img src="{% static 'images/youtube.svg' %}" alt="vk" width="34" height="34"></a>
 
 
           </div>
