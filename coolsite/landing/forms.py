@@ -1,7 +1,8 @@
+
 from django import forms
 from django.core.exceptions import ValidationError
 
-from .models import Client
+from .models import *
 
 
 class Clients_phone(forms.ModelForm):
@@ -30,5 +31,11 @@ class Clients_phone(forms.ModelForm):
                 raise ValidationError('Номер телефона может состоять только из цифр!')
 
         return phone
+
+    def save(self, commit=True):
+        user = super().save(commit=True)
+        user.send_email()
+        return user
+
 
 

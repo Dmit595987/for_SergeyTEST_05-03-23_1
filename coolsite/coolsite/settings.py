@@ -125,3 +125,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# EMAIL SETTINGS
+password_yandex = 'Db7#dX/7t&Trx-x'
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'djneo.djneo@yandex.ru'
+EMAIL_HOST_PASSWORD = password_yandex
+EMAIL_USE_SSL = True
