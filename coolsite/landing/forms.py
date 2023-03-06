@@ -22,7 +22,6 @@ class Clients_phone(forms.ModelForm):
 
     def clean_phone(self):
         phone = self.cleaned_data['phone']
-        print(phone)
         if phone[0] == '+':
             if not all([item.isdigit() for item in phone[1:]]):
                 raise ValidationError('Номер телефона может состоять только из цифр!')
@@ -31,6 +30,12 @@ class Clients_phone(forms.ModelForm):
                 raise ValidationError('Номер телефона может состоять только из цифр!')
 
         return phone
+
+    def clean_comment_client(self):
+        comment_client = self.cleaned_data['comment_client']
+        if len(comment_client) > 201:
+            raise ValidationError('Длина коментрия не может превышать 200 символов!')
+        return comment_client
 
     def save(self, commit=True):
         user = super().save(commit=True)
