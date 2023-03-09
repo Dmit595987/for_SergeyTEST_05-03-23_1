@@ -24,7 +24,7 @@ class Client(models.Model):
             subject=subject,
             message=message,
             from_email=settings.EMAIL_HOST_USER,
-            recipient_list=['2957549@gmail.com'],
+            recipient_list=['neodisco@mail.ru'],
             fail_silently=False,
         )
 
