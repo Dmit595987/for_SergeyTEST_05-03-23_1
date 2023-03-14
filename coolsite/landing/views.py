@@ -74,3 +74,9 @@ def blog_single(request):
     }
     return render(request, 'blog-single.html', context)
 
+
+def reviews(request):
+    context = {
+        'title': 'Отзывы'
+    }
+    return render(request, 'reviews.html', context)
