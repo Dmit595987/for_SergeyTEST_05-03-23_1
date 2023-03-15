@@ -21,12 +21,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
-env = environ.Env()
-environ.Env.read_env(env_file=os.path.join(BASE_DIR, '.env'))
+env = environ.Env(DEBUG=(bool, False))
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-w9=4d=v5k4w(6g7e-2&kpjx$^jt)8=5bayv+%a*ud3xa&-6)-("
+SECRET_KEY = 'django-insecure-w9=4d=v5k4w(6g7e-2&kpjx$^jt)8=5bayv+%a*ud3xa&-6)-('
+
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -84,9 +85,13 @@ WSGI_APPLICATION = 'coolsite.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "djneo_db_1",
+        "USER": "dj_username",
+        "PASSWORD": "dj_password2702",
+        "HOST": "localhost",
+        "PORT": "5432",
     }
 }
 
@@ -142,3 +147,16 @@ EMAIL_PORT = 465
 EMAIL_HOST_USER = 'djneo.djneo@yandex.ru'
 EMAIL_HOST_PASSWORD = password_yandex
 EMAIL_USE_SSL = True
+
+'''
+postgres=# CREATE DATABASE djneo_db_1;
+CREATE DATABASE
+postgres=# CREATE ROLE dj_username with password 'dj_password2702';
+CREATE ROLE
+postgres=# ALTER ROLE "dj_username" WITH LOGIN;
+ALTER ROLE
+postgres=# GRANT ALL PRIVILEGES ON DATABASE "djneo_db_1" to dj_username;
+GRANT
+postgres=# ALTER USER dj_username CREATEDB;
+ALTER ROLE
+'''
